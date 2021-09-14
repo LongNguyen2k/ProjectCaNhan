@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace EFDatabaseFirst
 {
-    public partial class Form1 : Form
+    public partial class FormReport : Form
     {
-        public Form1()
+        public FormReport()
         {
             InitializeComponent();
         }

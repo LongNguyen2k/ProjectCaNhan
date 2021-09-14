@@ -33,8 +33,27 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,14 +65,120 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="BUS\BUS_DonHang.cs" />
+    <Compile Include="BUS\BUS_SanPham.cs" />
+    <Compile Include="Category.cs">
+      <DependentUpon>NorthWindEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>NorthWindEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerDemographic.cs">
+      <DependentUpon>NorthWindEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\DAO_DonHang.cs" />
+    <Compile Include="DAO\DAO_SanPham.cs" />
+    <Compile Include="Employee.cs">
+      <DependentUpon>NorthWindEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FChiTietDonHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FChiTietDonHang.Designer.cs">
+      <DependentUpon>FChiTietDonHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FCTDatHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FCTDatHang.Designer.cs">
+      <DependentUpon>FCTDatHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReport.Designer.cs">
+      <DependentUpon>FormReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FQuanLy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FQuanLy.Designer.cs">
+      <DependentUpon>FQuanLy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FQuanLyDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FQuanLyDonHang.Designer.cs">
+      <DependentUpon>FQuanLyDonHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FQuanLySanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FQuanLySanPham.Designer.cs">
+      <DependentUpon>FQuanLySanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NorthWindEntity.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NorthWindEntity.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NorthWindEntity.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NorthWindEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NorthWindEntity.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NorthWindEntity.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs">
+      <DependentUpon>NorthWindEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderDetail.cs">
+      <DependentUpon>NorthWindEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>NorthWindEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Region.cs">
+      <DependentUpon>NorthWindEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Report\cRSanPham.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>cRSanPham.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Shipper.cs">
+      <DependentUpon>NorthWindEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Supplier.cs">
+      <DependentUpon>NorthWindEntity.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Territory.cs">
+      <DependentUpon>NorthWindEntity.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FChiTietDonHang.resx">
+      <DependentUpon>FChiTietDonHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FCTDatHang.resx">
+      <DependentUpon>FCTDatHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReport.resx">
+      <DependentUpon>FormReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FQuanLy.resx">
+      <DependentUpon>FQuanLy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FQuanLyDonHang.resx">
+      <DependentUpon>FQuanLyDonHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FQuanLySanPham.resx">
+      <DependentUpon>FQuanLySanPham.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +188,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Report\cRSanPham.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>cRSanPham.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EntityDeploy Include="NorthWindEntity.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NorthWindEntity.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="NorthWindEntity.edmx.diagram">
+      <DependentUpon>NorthWindEntity.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,6 +212,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="NorthWindEntity.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NorthWindEntity.edmx</DependentUpon>
+      <LastGenOutput>NorthWindEntity.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="NorthWindEntity.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NorthWindEntity.edmx</DependentUpon>
+      <LastGenOutput>NorthWindEntity.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
